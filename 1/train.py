@@ -73,10 +73,12 @@ acc_test_history =[]
 for k in range(n_epochs):
     print(f'epoch {k+1}/{n_epochs}',end=': ',flush=True)
 
-    # 1 epoch の学習    
+    # 1 epoch の学習  
+    time_start = time.time()  
     loss_train = models.train(model, dataloader_test, loss_fn, optimizer)
+    time_end = time.time()
     loss_train_history.append(loss_train)
-    print(f'train loss: {loss_train*100:.3f}%', end=', ')
+    print(f'train loss: {loss_train:.3f} ({time_end-time_start}s)', end=', ')
     
     loss_test = models.tacc_trainest_accuracy(model, dataloader_test, loss_fn)
     loss_test_history.append(loss_test)
