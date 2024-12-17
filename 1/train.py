@@ -79,7 +79,9 @@ for k in range(n_epochs):
     time_end = time.time()
     loss_train_history.append(loss_train)
     print(f'train loss: {loss_train:.3f} ({time_end-time_start}s)', end=', ')
-    
+    print(f'train loss: {loss_train:.3f} ({time_end-time_start:.1f}s)', end=', ')
+
+
     loss_test = models.tacc_trainest_accuracy(model, dataloader_test, loss_fn)
     loss_test_history.append(loss_test)
     print(f'test loss: {loss_test*100:.3f}%',end=', ')
