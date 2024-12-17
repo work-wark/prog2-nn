@@ -64,14 +64,11 @@ loss_fn = torch.nn.CrossEntropyLoss()
 learning_rate = 0.003
 optimizer = torch.optim.SGD(model.parameters(),lr=learning_rate)
 #criterion（基準）とも呼ぶ
-
 n_epochs = 5
-
 loss_train_history =[]
 loss_test_history =[]
 acc_train_history =[]
 acc_test_history =[]
-
 
 for k in range(n_epochs):
     print(f'epoch {k+1}/{n_epochs}',end=': ',flush=True)
